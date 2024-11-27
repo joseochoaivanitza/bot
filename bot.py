@@ -32,6 +32,24 @@ def glass_plastic(message):
         bot.send_photo(message.chat.id, f)
     bot.reply_to(message, "Стекло разлагается более 1000 лет")
 
+@bot.message_handler(commands=['paper'])
+def paper_plastic(message):
+    with open(f'paper.jpeg', 'rb') as f:  
+        bot.send_photo(message.chat.id, f)
+    bot.reply_to(message, "бумага разлагается в среднем 2 года")
+
+@bot.message_handler(commands=['battaries'])
+def paper_plastic(message):
+    with open(f'batary.jpeg', 'rb') as f:  
+        bot.send_photo(message.chat.id, f)
+    bot.reply_to(message, "батарейки разлагается более 100 лет")
+
+@bot.message_handler(commands=['battery'])
+def paper_plastic(message):
+    with open(f'battary.jpeg', 'rb') as f:  
+        bot.send_photo(message.chat.id, f)
+    bot.reply_to(message, "аккамуляторы разлагается более 100 лет")
+
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
     bot.reply_to(message, message.text)
